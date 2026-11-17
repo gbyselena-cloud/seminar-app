@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8"><title>세미나 계획·실적 통합관리</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+:root{--bg:#f4f7fb;--card:#fff;--tx:#111827;--sub:#5b6575;--pri:#1428a0;--pri2:#e8edff;--bd:#d8dfeb;--ok:#0b7a43;--no:#c62828;--wa:#b26a00;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1420;--card:#1a2130;--tx:#eef2f8;--sub:#a0abbd;--pri:#7b93ff;--pri2:#252f55;--bd:#2f3a52;--ok:#4fd18b;--no:#ff7b7b;--wa:#ffbf5e;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1420;--card:#1a2130;--tx:#eef2f8;--sub:#a0abbd;--pri:#7b93ff;--pri2:#252f55;--bd:#2f3a52;--ok:#4fd18b;--no:#ff7b7b;--wa:#ffbf5e;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font:17px/1.5 "Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif}
+header{background:var(--pri);color:#fff;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;gap:8px;position:sticky;top:env(safe-area-inset-top,0px);z-index:5}
+header b{font-size:19px}header button{background:#fff3;color:#fff;border:0;border-radius:8px;padding:8px 12px;font-size:15px}
+main{max-width:1100px;margin:0 auto;padding:14px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:16px;margin-bottom:14px}
+h2{font-size:20px;margin:0 0 10px}h3{font-size:18px;margin:0 0 8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.kpi{background:var(--pri2);border-radius:12px;padding:12px}.kpi small{color:var(--sub);display:block;font-size:14px}.kpi b{font-size:26px;color:var(--pri)}
+button,input,select,textarea{font:inherit;color:var(--tx)}
+.btn{background:var(--pri);color:#fff;border:0;border-radius:10px;padding:12px 18px;font-weight:700;min-height:48px;cursor:pointer}
+.btn.g{background:var(--pri2);color:var(--pri)}.btn.r{background:var(--no)}.btn.s{padding:8px 12px;min-height:40px;font-size:15px}
+input,select,textarea{width:100%;padding:12px;border:1px solid var(--bd);border-radius:10px;background:var(--card);min-height:48px}
+label{display:block;font-weight:700;margin:10px 0 4px}
+.tabs{display:flex;gap:6px;overflow-x:auto;margin-bottom:12px}.tabs button{white-space:nowrap;border:1px solid var(--bd);background:var(--card);border-radius:20px;padding:10px 16px;font-size:16px}.tabs .on{background:var(--pri);color:#fff;border-color:var(--pri)}
+.tw{overflow-x:auto}table{border-collapse:collapse;width:100%;min-width:560px}th,td{padding:9px 8px;border-bottom:1px solid var(--bd);text-align:left;font-size:15px;vertical-align:top}th{background:var(--pri2);color:var(--pri)}
+.tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:14px;font-weight:700;background:var(--pri2);color:var(--pri)}.tag.ok{color:var(--ok)}.tag.no{color:var(--no)}.tag.wa{color:var(--wa)}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.row>*{flex:0 0 auto}
+.bar{height:16px;background:var(--pri2);border-radius:8px;overflow:hidden;min-width:100px}.bar i{display:block;height:100%;background:var(--pri)}
+#mod{position:fixed;inset:0;background:#0009;display:none;align-items:flex-start;justify-content:center;overflow:auto;padding:16px;z-index:20}#mod .card{width:100%;max-width:560px;margin:auto}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}@media(max-width:520px){.two{grid-template-columns:1fr}}
+.login{max-width:440px;margin:24px auto}.mut{color:var(--sub);font-size:14px}
+:root{--bg:#f3f5fa;--card:#fff;--tx:#0f172a;--sub:#5d6b82;--pri:#1428a0;--pri2:#eef1fd;--bd:#e3e8f2;--ok:#0f7b4d;--no:#c9302c;--wa:#b45f06;--onpri:#fff;--sh:0 1px 2px rgba(16,24,64,.05),0 8px 24px rgba(16,24,64,.07);--hd:linear-gradient(135deg,#0a1766,#1428a0 55%,#2f55e0)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1020;--card:#151c2e;--tx:#eaf0fb;--sub:#9aa8c0;--pri:#8ea2ff;--pri2:#1e2850;--bd:#26314a;--ok:#4fd18b;--no:#ff8080;--wa:#ffc066;--onpri:#0b1020;--sh:0 1px 2px #0006;--hd:linear-gradient(135deg,#101b4a,#1b2f7a)}}
+:root[data-theme="dark"]{--bg:#0b1020;--card:#151c2e;--tx:#eaf0fb;--sub:#9aa8c0;--pri:#8ea2ff;--pri2:#1e2850;--bd:#26314a;--ok:#4fd18b;--no:#ff8080;--wa:#ffc066;--onpri:#0b1020;--sh:0 1px 2px #0006;--hd:linear-gradient(135deg,#101b4a,#1b2f7a)}
+body{font:17px/1.6 Pretendard,"Noto Sans KR","Malgun Gothic","Apple SD Gothic Neo",system-ui,sans-serif;font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased;letter-spacing:-.01em}
+header{background:var(--hd);color:#fff;padding:14px 20px;box-shadow:0 4px 16px rgba(10,23,102,.25)}
+header b{font-size:18px;display:block;line-height:1.2}header small{opacity:.75;font-size:13px}
+.brand{display:flex;align-items:center;gap:12px}.logo{width:40px;height:40px;border-radius:12px;background:#fff;color:#1428a0;font-weight:900;font-size:22px;display:grid;place-items:center}.logo.big{width:56px;height:56px;font-size:30px;background:var(--hd);color:#fff}
+.who{display:flex;align-items:center;gap:10px;font-size:15px}.chip{background:#ffffff2b;border-radius:20px;padding:3px 12px;font-size:13px;font-weight:700}
+header button{background:#ffffff26;border:1px solid #ffffff40;border-radius:10px;padding:8px 14px;color:#fff;font-size:14px}
+main{max-width:1180px;padding:20px 16px 40px}
+.card{border:1px solid var(--bd);border-radius:18px;padding:22px;margin-bottom:18px;box-shadow:var(--sh)}
+h2{font-size:21px;font-weight:800;margin:0 0 14px;display:flex;align-items:center;gap:10px}h2::before{content:"";width:5px;height:20px;border-radius:3px;background:var(--pri)}.row h2::before,.login h2::before,.hero h2::before{display:none}
+h3{font-size:18px;font-weight:800}
+.grid{grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.kpi{background:var(--card);border:1px solid var(--bd);border-left:5px solid var(--pri);border-radius:14px;padding:14px 16px}.kpi small{font-size:14px;font-weight:600}.kpi b{font-size:30px;font-weight:800;line-height:1.2;color:var(--tx)}
+.hero{display:flex;gap:28px;align-items:center;flex-wrap:wrap;background:linear-gradient(180deg,var(--card),var(--pri2))}.hero h2{margin-bottom:10px}
+.ring{width:140px;height:140px;border-radius:50%;background:conic-gradient(var(--pri) calc(var(--p)*1%),var(--bd) 0);display:grid;place-content:center;text-align:center;position:relative;flex:none;margin:auto}.ring::before{content:"";position:absolute;inset:14px;background:var(--card);border-radius:50%}.ring>*{position:relative}.ring b{font-size:32px;color:var(--pri);line-height:1}.ring small{color:var(--sub);font-weight:700}
+.btn{background:var(--pri);color:var(--onpri);border-radius:12px;box-shadow:0 2px 6px rgba(20,40,160,.25)}.btn.g{background:var(--pri2);color:var(--pri);box-shadow:none}.btn.r{background:var(--no);color:#fff}
+.tabs{gap:8px;border-bottom:1px solid var(--bd);padding-bottom:10px}.tabs button{border:0;background:transparent;color:var(--sub);font-weight:700;border-radius:12px;padding:10px 18px}.tabs .on{background:var(--pri);color:var(--onpri)}
+.card.row{padding:12px 18px}
+.tw{border:1px solid var(--bd);border-radius:14px}table{min-width:620px}th{font-size:13px;letter-spacing:.02em;padding:12px 10px;background:var(--pri2);color:var(--pri);position:sticky;top:0}td{padding:12px 10px}tr:nth-child(even) td{background:color-mix(in srgb,var(--pri2) 35%,transparent)}tr:last-child td{border-bottom:0}
+.tag{padding:3px 11px;font-size:13.5px;background:var(--pri2)}.tag.ok{background:color-mix(in srgb,var(--ok) 15%,transparent)}.tag.no{background:color-mix(in srgb,var(--no) 14%,transparent)}.tag.wa{background:color-mix(in srgb,var(--wa) 16%,transparent)}
+.bar{height:10px;border-radius:6px;background:var(--bd);margin-bottom:3px}.bar i{background:linear-gradient(90deg,#2f55e0,var(--pri))}
+input,select,textarea{border-radius:12px;border:1.5px solid var(--bd);background:var(--card)}input:focus,select:focus,textarea:focus{outline:3px solid color-mix(in srgb,var(--pri) 30%,transparent);border-color:var(--pri)}
+#mod{backdrop-filter:blur(3px)}#mod .card{border-radius:20px}
+.login{max-width:460px;margin-top:40px}.login>.card:first-child{padding:30px;text-align:center}.login label,.login p{text-align:left}.login .logo{margin:0 auto}
+@media(max-width:520px){header{padding:12px}.who .chip{display:none}.card{padding:16px;border-radius:16px}.hero{gap:12px}}
+main{padding-bottom:110px}
+.ttl{font-size:26px;font-weight:800;margin:4px 0;display:flex;align-items:center;gap:8px;flex-wrap:wrap;line-height:1.3}.nv{border:1px solid var(--bd);background:var(--card);color:var(--pri);border-radius:50%;width:36px;height:36px;font-size:22px;line-height:1;cursor:pointer}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:6px}.kpi.c{text-align:center;border-left:1px solid var(--bd);border-radius:18px;padding:16px 6px}.kpi.c b{font-size:32px}
+.sess{padding:18px}.seg{display:flex;background:var(--pri2);border-radius:12px;padding:4px;gap:2px}.seg button{border:0;background:transparent;color:var(--sub);font-weight:700;padding:9px 12px;border-radius:9px;font-size:15px}.seg .on{background:var(--pri);color:var(--onpri)}
+.lnk{border:0;background:none;color:var(--sub);font-size:15px;padding:8px}details{margin-top:10px}summary{cursor:pointer;padding:6px 0}
+.sbar{position:fixed;left:0;right:0;bottom:0;z-index:6;background:var(--card);border-top:1px solid var(--bd);display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 18px calc(12px + env(safe-area-inset-bottom,0px));box-shadow:0 -4px 16px rgba(16,24,64,.08)}
+</style></head><body>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script><script src="config.js"></script>
+<div id="app"></div><div id="mod"></div>
+<script>
+const DIV=["1사업부","2사업부","3사업부","4사업부"],pad=n=>String(n).padStart(2,"0");
+const REG=Array.from({length:72},(_,i)=>({id:"r"+pad(i+1),div:Math.floor(i/18),name:DIV[Math.floor(i/18)]+" "+(i%18+1)+"지역단"}));
+const RM=Object.fromEntries(REG.map(r=>[r.id,r]));
+const S={user:null,plans:[],notices:[],cfg:{},alerts:[],daily:[],month:"2026-11",tab:"home",db:null,dl:null,err:""};
+const E=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const st=p=>p.status==="cancel"||(p.actual&&p.actual.done===false)?"취소":(p.actual&&p.actual.done?"완료":"예정");
+const tg=s=>`<span class="tag ${s==="완료"?"ok":s==="취소"?"no":"wa"}">${s}</span>`;
+const today=()=>{const d=new Date();return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate())};
+const dlOf=m=>{if(S.cfg.dl&&S.cfg.dl[m])return S.cfg.dl[m];const [y,mo]=m.split("-").map(Number),d=new Date(y,mo-1,0);return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate())};
+const late=m=>today()>dlOf(m);
+const miss=p=>p.status!=="cancel"&&!p.actual&&p.date<today();
+function stat(l){const o={n:l.length,done:0,cancel:0,up:0,cust:0,exp:0,fc:0,miss:0};l.forEach(p=>{const s=st(p);if(miss(p))o.miss++;o.exp+=+p.exp||0;if(s==="완료"){o.done++;o.cust+=+p.actual.cust||0;o.fc+=+p.actual.fc||0}else if(s==="취소")o.cancel++;else o.up++});o.rate=o.n?Math.round(o.done/o.n*100):0;return o}
+const inM=(m=S.month)=>S.plans.filter(p=>p.month===m);
+function scope(l){const u=S.user;return u.role==="hq"?l:u.role==="div"?l.filter(p=>RM[p.rid]?.div===u.div):l.filter(p=>p.rid===u.rid)}
+let sb;
+function mkDl(){return{save:async({filename,data})=>{const a=document.createElement("a");a.href=URL.createObjectURL(data);a.download=filename;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),2000)}}}
+function mkDb(sb){
+ const sub=(c,load,eb)=>{let t;const run=()=>{clearTimeout(t);t=setTimeout(()=>load().catch(e=>eb&&eb(e)),150)};run();const ch=sb.channel("c_"+c+"_"+Math.random().toString(36).slice(2)).on("postgres_changes",{event:"*",schema:"public",table:"docs",filter:"col=eq."+c},run).subscribe();return()=>sb.removeChannel(ch)};
+ const ref=(c,id)=>({set:async d=>{const {error}=await sb.from("docs").upsert({col:c,id,data:d,updated_at:new Date().toISOString()});if(error)throw error},
+  delete:async()=>{const {error}=await sb.from("docs").delete().eq("col",c).eq("id",id);if(error)throw error},
+  onSnapshot:(cb,eb)=>sub(c,async()=>{const {data,error}=await sb.from("docs").select("data").eq("col",c).eq("id",id).maybeSingle();if(error)throw error;cb({data:()=>data?data.data:undefined})},eb)});
+ return{collection:c=>({doc:id=>ref(c,id||crypto.randomUUID()),onSnapshot:(cb,eb)=>sub(c,async()=>{const {data,error}=await sb.from("docs").select("id,data").eq("col",c);if(error)throw error;cb({docs:data.map(r=>({id:r.id,data:()=>r.data}))})},eb)}),doc:p=>{const [c,id]=p.split("/");return ref(c,id)}}}
+async function boot(){
+ const C=window.APP_CONFIG||{};
+ if(!window.supabase||!C.SUPABASE_URL||C.SUPABASE_URL.includes("YOUR")){S.err="config.js에 Supabase URL과 키를 입력해 주세요.";draw();return}
+ sb=supabase.createClient(C.SUPABASE_URL,C.SUPABASE_ANON_KEY);S.db=mkDb(sb);S.dl=mkDl();
+ const {data:{session}}=await sb.auth.getSession();
+ if(session){const {data:p}=await sb.from("profiles").select("*").eq("id",session.user.id).maybeSingle();if(p)S.user={id:p.login,role:p.role,div:p.div,rid:p.rid,name:p.name}}
+ const t=setTimeout(()=>{S.err="데이터 로딩이 지연되고 있습니다.";draw()},10000);
+ S.db.collection("plans").onSnapshot(s=>{clearTimeout(t);S.err="";S.plans=s.docs.map(d=>({...d.data(),id:d.id}));S.pl=1;autoDaily();draw()},e=>{S.err="데이터 오류: "+e.message;draw()});
+ S.db.collection("notices").onSnapshot(s=>{S.notices=s.docs.map(d=>({...d.data(),id:d.id})).sort((a,b)=>(b.at||"").localeCompare(a.at||""));draw()});
+ S.db.doc("settings/cfg").onSnapshot(d=>{S.cfg=(d.data&&d.data())||{};draw()});
+ S.db.collection("alerts").onSnapshot(s=>{S.alerts=s.docs.map(d=>({...d.data(),id:d.id})).sort((a,b)=>b.at.localeCompare(a.at));draw()});
+ S.db.collection("daily").onSnapshot(s=>{S.daily=s.docs.map(d=>({...d.data(),id:d.id})).sort((a,b)=>b.id.localeCompare(a.id));S.dy=1;autoDaily();draw()});
+ draw()}
+function draw(){
+ if(document.getElementById("mod").style.display==="flex")return;const ae=document.activeElement;if(S.dirty&&ae&&/INPUT|TEXTAREA|SELECT/.test(ae.tagName)&&document.getElementById("app").contains(ae))return;
+ const a=document.getElementById("app"),u=S.user;
+ if(!u){a.innerHTML=loginV();return}
+ const tabs=u.role==="reg"?[["home","내 세미나"],["notice","공지사항"]]:u.role==="div"?[["home","제출 현황"],["chg","변경·취소"],["daily","일일 집계"],["notice","공지사항"]]:[["home","대시보드"],["reg","지역단별"],["chg","변경·취소"],["notice","공지 관리"],["daily","일일 집계"],["data","데이터·엑셀"]];
+ if(!tabs.some(t=>t[0]===S.tab))S.tab="home";
+ a.innerHTML=`<header><div class="brand"><span class="logo">S</span><div><b>세미나 계획·실적 관리</b><small>삼성생명 FC영업본부</small></div></div><div class="who"><span class="chip">${u.role==="hq"?"본부":u.role==="div"?"사업부":"지역단"}</span>${E(u.name)} <button onclick="logout()">로그아웃</button></div></header><main>${S.err?`<div class="card" style="color:var(--no)">${E(S.err)}</div>`:""}
+ <div class="tabs">${tabs.map(t=>`<button class="${S.tab===t[0]?"on":""}" onclick="S.tab='${t[0]}';draw()">${t[1]}</button>`).join("")}</div>
+ ${u.role==="reg"&&S.tab==="home"?"":`<div class="card row"><b>대상 월</b><input type="month" style="width:auto" value="${S.month}" onchange="S.month=this.value||S.month;draw()"></div>`}
+ ${S.tab==="notice"&&u.role!=="hq"?noticeV(false):S.tab==="home"?(u.role==="reg"?regV2():u.role==="div"?divV():dashV()):S.tab==="reg"?regsV():S.tab==="chg"?chgV():S.tab==="daily"?dailyV():S.tab==="notice"?noticeV(true):dataV()}</main>`}
+function loginV(){return`<div class="login"><div class="card"><div class="logo big">S</div><h2 style="color:var(--pri);margin:14px 0 2px;justify-content:center">세미나 계획·실적<br>통합관리 시스템</h2><p class="mut" style="text-align:center">삼성생명 FC영업본부</p>
+<label>아이디</label><input id="lid" autocapitalize="off"><label>비밀번호</label><input id="lpw" type="password" onkeydown="if(event.key==='Enter')login()">
+<p id="lerr" style="color:var(--no)"></p><button class="btn" style="width:100%" onclick="login()">로그인</button>
+${(window.APP_CONFIG||{}).SHOW_SAMPLE?'<p class="mut">샘플 계정: 지역단 r01~r72 · 사업부 d1~d4 · 본부 admin (비밀번호는 담당자 안내)</p>':""}${S.err?`<p style="color:var(--no)">${E(S.err)}</p>`:""}</div>
+${S.notices.length?`<div class="card"><h3>📢 공지사항</h3>${S.notices.slice(0,3).map(n=>`<p><b>${E(n.title)}</b><br><span class="mut">${E(n.body)}</span></p>`).join("")}</div>`:""}</div>`}
+async function login(){const id=lid.value.trim().toLowerCase();lerr.textContent="";const {error}=await sb.auth.signInWithPassword({email:id+"@seminar.local",password:lpw.value});if(error){lerr.textContent="아이디 또는 비밀번호가 올바르지 않습니다.";return}location.reload()}
+async function logout(){await sb.auth.signOut();location.reload()}
+function kpis(s,extra){return`<div class="grid">${[["계획 건수",s.n],["운영 완료",s.done],["운영 예정",s.up],["취소",s.cancel],["실제 고객 참석",s.cust+"명"],["계획 대비 운영률",s.rate+"%"],["실적 미입력",s.miss||0],...(extra||[])].map(k=>`<div class="kpi"><small>${k[0]}</small><b>${k[1]}</b></div>`).join("")}</div>`}
+function regV(){const u=S.user,l=inM().filter(p=>p.rid===u.rid).sort((a,b)=>a.date.localeCompare(b.date));
+ return regWarn(l)+`<div class="card">${kpis(stat(l))}</div><div class="card"><div class="row"><h2 style="margin:0">${S.month} 세미나</h2><button class="btn" onclick="planForm()">＋ 계획 등록</button></div>
+ <div class="tw"><table><tr><th>일자</th><th>주제/장소</th><th>예상</th><th>상태</th><th>실적</th><th></th></tr>${l.map(p=>`<tr><td>${E(p.date)}<br>${E(p.time)}</td><td><b>${E(p.topic)}</b><br><span class="mut">${E(p.place)} · ${E(p.owner)}</span></td><td>${E(p.exp)}명</td><td>${tg(st(p))}${miss(p)?' <span class="tag no">실적 미입력</span>':''}</td>
+ <td>${p.actual?(p.actual.done?`고객 ${E(p.actual.cust)}명 / FC ${E(p.actual.fc)}명<br><span class="mut">${E(p.actual.result)}</span>`:`미운영: ${E(p.actual.reason)}`):"-"}</td>
+ <td><div class="row"><button class="btn g s" onclick="planForm('${p.id}')">수정</button><button class="btn g s" onclick="actForm('${p.id}')">실적</button>${p.status!=="cancel"?`<button class="btn r s" onclick="cancelPlan('${p.id}')">취소</button>`:""}</div></td></tr>`).join("")||`<tr><td colspan="6">등록된 계획이 없습니다.</td></tr>`}</table></div></div>
+ ${l.some(p=>p.history?.length)?`<div class="card"><h3>변경 이력</h3>${l.flatMap(p=>(p.history||[]).map(h=>({...h,t:p.topic}))).map(histV).join("")}</div>`:""}`}
+const histV=h=>`<p>• <b>${E(h.t)}</b> — ${E(h.type)} (${E(h.at?.slice(0,16).replace("T"," "))}, ${E(h.by)})<br><span class="mut">${E(h.from||"")} → ${E(h.to||"")} / 사유: ${E(h.reason)}</span></p>`;
+function modal(h){const m=document.getElementById("mod");m.innerHTML=`<div class="card">${h}</div>`;m.style.display="flex"}
+function closeM(){document.getElementById("mod").style.display="none";draw()}
+const V=id=>document.getElementById(id).value;
+function planForm(id){const p=S.plans.find(x=>x.id===id)||{month:S.month,expert:"N"};
+ modal(`<h2>${id?"계획 수정":"세미나 계획 등록"}</h2><div class="two"><div><label>운영 예정 월</label><input id="f_month" type="month" value="${E(p.month)}"></div><div><label>예정일</label><input id="f_date" type="date" value="${E(p.date||"")}"></div><div><label>시간</label><input id="f_time" type="time" value="${E(p.time||"14:00")}"></div><div><label>예상 고객 참석 인원</label><input id="f_exp" type="number" value="${E(p.exp||"")}"></div></div>
+ <label>주제</label><input id="f_topic" value="${E(p.topic||"")}"><label>장소</label><input id="f_place" value="${E(p.place||"")}"><label>담당자</label><input id="f_owner" value="${E(p.owner||"")}"><label>참석 대상·특이사항</label><input id="f_target" value="${E(p.target||"")}">
+ <label>전문강사 지원 필요</label><select id="f_expert"><option value="N">불필요</option><option value="Y" ${p.expert==="Y"?"selected":""}>필요</option></select><label>기타 메모</label><textarea id="f_memo">${E(p.memo||"")}</textarea>
+ ${id?`<label>변경 사유 (일정·장소 변경 시 필수)</label><input id="f_reason">`:""}<p id="ferr" style="color:var(--no)"></p><div class="row"><button class="btn" onclick="savePlan('${id||""}')">저장</button><button class="btn g" onclick="closeM()">닫기</button></div>`)}
+async function savePlan(id){const o={month:V("f_month"),date:V("f_date"),time:V("f_time"),exp:+V("f_exp")||0,topic:V("f_topic").trim(),place:V("f_place").trim(),owner:V("f_owner").trim(),target:V("f_target"),expert:V("f_expert"),memo:V("f_memo")};
+ if(!o.month||!o.date||!o.topic||!o.place||!o.owner){ferr.textContent="월·예정일·주제·장소·담당자는 필수입니다.";return}
+ const now=new Date().toISOString(),u=S.user;
+ try{if(!id){const r=db_().doc();await r.set({...o,rid:u.rid,status:"plan",history:[],actual:null,createdAt:now,updatedBy:u.name})}
+ else{const p=S.plans.find(x=>x.id===id),ch=p.date!==o.date||p.time!==o.time||p.place!==o.place;if(ch&&!V("f_reason").trim()){ferr.textContent="변경 사유를 입력해 주세요.";return}
+  const h=[...(p.history||[])];if(ch)h.push({at:now,by:u.name,type:"일정/장소 변경",from:`${p.date} ${p.time} ${p.place}`,to:`${o.date} ${o.time} ${o.place}`,reason:V("f_reason")});
+  const {id:_,...rest}=p;await db_().doc(id).set({...rest,...o,history:h,updatedAt:now,updatedBy:u.name});if(ch)await alertDiv(p.rid,`일정 변경 ${p.date} ${p.time} ${p.place} → ${o.date} ${o.time} ${o.place} (사유: ${V("f_reason")})`)}
+ closeM()}catch(e){ferr.textContent="저장 실패: "+e.message}}
+const db_=()=>S.db.collection("plans");
+function cancelPlan(id){modal(`<h2>세미나 취소</h2><label>취소 사유</label><input id="c_r"><p id="ferr" style="color:var(--no)"></p><div class="row"><button class="btn r" onclick="doCancel('${id}')">취소 확정</button><button class="btn g" onclick="closeM()">닫기</button></div>`)}
+async function doCancel(id){if(!V("c_r").trim()){ferr.textContent="사유를 입력해 주세요.";return}const p=S.plans.find(x=>x.id===id),{id:_,...rest}=p,now=new Date().toISOString();
+ await db_().doc(id).set({...rest,status:"cancel",updatedAt:now,updatedBy:S.user.name,history:[...(p.history||[]),{at:now,by:S.user.name,type:"취소",from:`${p.date} ${p.time}`,to:"취소",reason:V("c_r")}]});await alertDiv(p.rid,`${p.date} "${p.topic}" 취소 (사유: ${V("c_r")})`);closeM()}
+function actForm(id){const p=S.plans.find(x=>x.id===id),a=p.actual||{done:true,date:p.date};
+ modal(`<h2>실적 입력</h2><p class="mut">계획: ${E(p.date)} / 예상 ${E(p.exp)}명</p><label>실제 운영 여부</label><select id="a_done"><option value="1">운영함</option><option value="0" ${a.done===false?"selected":""}>미운영</option></select>
+ <div class="two"><div><label>실제 운영일</label><input id="a_date" type="date" value="${E(a.date||p.date)}"></div><div><label>고객 참석 인원</label><input id="a_cust" type="number" value="${E(a.cust||"")}"></div><div><label>참석 FC 인원</label><input id="a_fc" type="number" value="${E(a.fc||"")}"></div></div>
+ <label>주요 운영 결과</label><textarea id="a_res">${E(a.result||"")}</textarea><label>미운영 시 사유</label><input id="a_why" value="${E(a.reason||"")}"><div class="row" style="margin-top:12px"><button class="btn" onclick="saveAct('${id}')">저장</button><button class="btn g" onclick="closeM()">닫기</button></div>`)}
+async function saveAct(id){const p=S.plans.find(x=>x.id===id),{id:_,...rest}=p,done=V("a_done")==="1";
+ await db_().doc(id).set({...rest,actual:{done,date:V("a_date"),cust:+V("a_cust")||0,fc:+V("a_fc")||0,result:V("a_res"),reason:V("a_why")},updatedAt:new Date().toISOString(),updatedBy:S.user.name});closeM()}
+function regRows(list){const m=S.month;return list.map(r=>{const l=inM(m).filter(p=>p.rid===r.id),s=stat(l);return{r,s,sub:l.length>0}})}
+function subTable(rows){return`<div class="tw"><table><tr><th>지역단</th><th>제출</th><th>계획</th><th>완료</th><th>취소</th><th>미입력</th><th>고객참석</th><th>운영률</th></tr>${rows.map(x=>`<tr><td>${E(x.r.name)}</td><td>${x.sub?'<span class="tag ok">제출</span>':'<span class="tag no">'+(late(S.month)?'⚠ 마감 경과 미제출':'미제출')+'</span>'}</td><td>${x.s.n}</td><td>${x.s.done}</td><td>${x.s.cancel}</td><td>${x.s.miss?`<span class="tag no">${x.s.miss}건</span>`:0}</td><td>${x.s.cust}</td><td><div class="bar"><i style="width:${x.s.rate}%"></i></div>${x.s.rate}%</td></tr>`).join("")}</table></div>`}
+function divV(){const rows=regRows(REG.filter(r=>r.div===S.user.div)),nos=rows.filter(x=>!x.sub),s=stat(inM().filter(p=>RM[p.rid]?.div===S.user.div));
+ return alertsV()+lateV(rows)+minCard()+`<div class="card"><h2>${E(S.user.name)} ${S.month}</h2>${kpis(s,[["제출 지역단",rows.length-nos.length+"/"+rows.length],["미제출",nos.length]])}</div>
+ <div class="card"><h3>미제출 지역단</h3>${nos.map(x=>`<span class="tag no">${E(x.r.name)}</span> `).join("")||"없음 🎉"}</div><div class="card"><h3>지역단별 현황</h3>${subTable(rows)}<p><button class="btn" onclick="exp('plans')">엑셀 다운로드</button></p></div>`}
+function dashV(){const rows=regRows(REG),nos=rows.filter(x=>!x.sub),all=stat(inM());
+ const dv=DIV.map((d,i)=>{const l=inM().filter(p=>RM[p.rid]?.div===i),s=stat(l),rr=rows.filter(x=>x.r.div===i);return`<tr><td><b>${d}</b></td><td>${rr.filter(x=>x.sub).length}/${rr.length}</td><td>${s.n}</td><td>${s.done}</td><td>${s.up}</td><td>${s.cancel}</td><td>${s.cust}</td><td><div class="bar"><i style="width:${s.rate}%"></i></div>${s.rate}%</td></tr>`}).join("");
+ return alertsV()+lateV(rows)+`<div class="card hero"><div class="ring" style="--p:${all.rate}"><b>${all.rate}%</b><small>계획 대비 운영률</small></div><div style="flex:1;min-width:260px"><h2>${S.month} 본부 현황</h2>${kpis(all,[["전체 지역단","72개"],["제출 지역단",72-nos.length],["미제출 지역단",nos.length]])}</div></div>
+ <div class="card"><h3>사업부별 현황</h3><div class="tw"><table><tr><th>사업부</th><th>제출</th><th>계획</th><th>완료</th><th>예정</th><th>취소</th><th>고객참석</th><th>운영률</th></tr>${dv}</table></div></div>
+ <div class="card"><h3>미제출 지역단 (${nos.length})</h3>${nos.map(x=>`<span class="tag no">${E(x.r.name)}</span> `).join("")||"없음"}</div>`}
+function regsV(){return`<div class="card"><h3>72개 지역단별 현황</h3>${subTable(regRows(REG))}</div>`}
+function chgV(){const l=scope(S.plans).filter(p=>p.month===S.month),h=l.flatMap(p=>(p.history||[]).map(x=>({...x,t:p.topic,r:RM[p.rid]?.name}))).sort((a,b)=>b.at.localeCompare(a.at));
+ return`<div class="card"><h2>일정 변경·취소 내역</h2>${h.map(x=>`<p>• <b>${E(x.r)}</b> ${E(x.t)} — ${E(x.type)}<br><span class="mut">${E(x.at.slice(0,16).replace("T"," "))} · ${E(x.by)} · ${E(x.from)} → ${E(x.to)} · 사유: ${E(x.reason)}</span></p>`).join("")||"변경 내역이 없습니다."}</div>`}
+function noticeV(ed){return`<div class="card"><div class="row"><h2 style="margin:0">공지사항</h2>${ed?`<button class="btn" onclick="noticeForm()">＋ 공지 등록</button>`:""}</div>${S.notices.map(n=>`<div style="border-top:1px solid var(--bd);padding:10px 0"><b>${E(n.title)}</b> <span class="mut">${E(n.month||"")}</span><br>${E(n.body)}${ed?`<div class="row" style="margin-top:6px"><button class="btn g s" onclick="noticeForm('${n.id}')">수정</button><button class="btn r s" onclick="delNotice('${n.id}')">삭제</button></div>`:""}</div>`).join("")||"<p>등록된 공지가 없습니다.</p>"}</div>`}
+function noticeForm(id){const n=S.notices.find(x=>x.id===id)||{month:S.month};modal(`<h2>공지 ${id?"수정":"등록"}</h2><label>운영 월</label><input id="n_m" type="month" value="${E(n.month)}"><label>제목</label><input id="n_t" value="${E(n.title||"")}"><label>내용</label><textarea id="n_b" rows="5">${E(n.body||"")}</textarea><div class="row" style="margin-top:12px"><button class="btn" onclick="saveNotice('${id||""}')">저장</button><button class="btn g" onclick="closeM()">닫기</button></div>`)}
+async function saveNotice(id){if(!V("n_t").trim())return;const o={month:V("n_m"),title:V("n_t"),body:V("n_b"),at:new Date().toISOString()};await (id?S.db.collection("notices").doc(id):S.db.collection("notices").doc()).set(o);closeM()}
+async function delNotice(id){if(confirm("삭제할까요?"))await S.db.collection("notices").doc(id).delete()}
+function dataV(){return deadlineV()+`<div class="card"><h2>엑셀 다운로드 (${S.month})</h2><div class="row"><button class="btn" onclick="exp('plans')">지역단별 계획·실적</button><button class="btn" onclick="exp('month')">월별 통계</button><button class="btn" onclick="exp('cmp')">계획 대비 실적</button></div><p class="mut">UTF-8 CSV 형식으로 엑셀에서 바로 열립니다. 사업부 담당자는 소속 사업부 데이터만 받습니다.</p></div>
+<div class="card"><h3>데이터 관리</h3><p class="mut">샘플 계정 테스트용 샘플 데이터(2026년 10·11월)를 생성합니다. 현재 ${S.plans.length}건 저장됨.</p><div class="row"><button class="btn g" onclick="seed()">샘플 데이터 생성</button><button class="btn r" onclick="wipe()">전체 계획 삭제</button></div><p id="dmsg"></p></div>`}
+async function exp(k){const u=S.user,regs=u.role==="hq"?REG:REG.filter(r=>r.div===u.div),L=scope(S.plans).filter(p=>p.month===S.month);let h,rows;
+ if(k==="plans"){h=["사업부","지역단","월","예정일","시간","주제","장소","담당자","예상인원","상태","실제운영일","고객참석","FC참석","결과/사유"];rows=L.map(p=>[DIV[RM[p.rid].div],RM[p.rid].name,p.month,p.date,p.time,p.topic,p.place,p.owner,p.exp,st(p),p.actual?.date||"",p.actual?.cust??"",p.actual?.fc??"",p.actual?.done===false?p.actual.reason:p.actual?.result||""])}
+ else if(k==="month"){const ms=[...new Set(scope(S.plans).map(p=>p.month))].sort();h=["월","계획","완료","예정","취소","고객참석","운영률(%)"];rows=ms.map(m=>{const s=stat(scope(S.plans).filter(p=>p.month===m));return[m,s.n,s.done,s.up,s.cancel,s.cust,s.rate]})}
+ else{h=["사업부","지역단","계획건수","예상인원","완료","취소","실제고객참석","참석률(%)","운영률(%)"];rows=regs.map(r=>{const s=stat(L.filter(p=>p.rid===r.id));return[DIV[r.div],r.name,s.n,s.exp,s.done,s.cancel,s.cust,s.exp?Math.round(s.cust/s.exp*100):0,s.rate]})}
+ const csv="\ufeff"+[h,...rows].map(r=>r.map(c=>'"'+String(c??"").replace(/"/g,'""')+'"').join(",")).join("\r\n");
+ if(!S.dl){alert("이 화면에서는 다운로드를 사용할 수 없습니다.");return}
+ try{await S.dl.save({filename:`세미나_${k}_${S.month}.csv`,data:new Blob([csv],{type:"text/csv;charset=utf-8"})})}catch(e){if(e.code!=="declined")alert("다운로드 실패: "+(e.message||e.code))}}
+async function seed(){let x=7;const rnd=()=>(x=(x*9301+49297)%233280)/233280,T=["고객 재무설계 세미나","은퇴·연금 설계 특강","상속·증여 절세 세미나","건강보험 트렌드 설명회","자산관리 포럼"],now=new Date().toISOString(),ws=[];
+ for(const r of REG)for(const m of ["2026-10","2026-11"]){if(m==="2026-11"&&rnd()<.25)continue;const n=1+Math.floor(rnd()*3);
+  for(let i=0;i<n;i++){const d=m+"-"+pad(3+Math.floor(rnd()*24)),can=rnd()<.1,past=m==="2026-10",ok=past&&!can&&rnd()<.9,exp=20+Math.floor(rnd()*40);
+  ws.push(db_().doc().set({rid:r.id,month:m,date:d,time:"14:00",topic:T[Math.floor(rnd()*5)],place:r.name+" 세미나실",owner:"담당 FC",exp,target:"가망 고객",expert:rnd()<.3?"Y":"N",memo:"",status:can?"cancel":"plan",
+   actual:ok?{done:true,date:d,cust:Math.round(exp*(.6+rnd()*.5)),fc:5+Math.floor(rnd()*10),result:"정상 운영",reason:""}:null,history:can?[{at:now,by:r.name,type:"취소",from:d+" 14:00",to:"취소",reason:"강사 일정 변경"}]:[],createdAt:now,updatedBy:r.name}))}}
+ dmsg.textContent="생성 중...";for(let i=0;i<ws.length;i+=15)await Promise.all(ws.slice(i,i+15));dmsg.textContent="완료: "+ws.length+"건 생성"}
+async function wipe(){if(!confirm("모든 계획·실적을 삭제할까요?"))return;for(const p of S.plans)await db_().doc(p.id).delete()}
+async function alertDiv(rid,msg){await S.db.collection("alerts").doc().set({div:RM[rid].div,rid,msg:RM[rid].name+": "+msg,at:new Date().toISOString(),read:false,readHq:false})}
+function alertsV(){const u=S.user,k=u.role==="hq"?"readHq":"read",l=S.alerts.filter(a=>!a[k]&&(u.role==="hq"||a.div===u.div));if(!l.length)return"";return`<div class="card" style="border-color:var(--wa)"><div class="row"><h3 style="margin:0">🔔 새 변경·취소 알림 ${l.length}건</h3><button class="btn g s" onclick="readAlerts()">모두 확인</button></div>${l.slice(0,10).map(a=>`<p>• ${E(a.msg)}<br><span class="mut">${E(a.at.slice(0,16).replace("T"," "))}</span></p>`).join("")}</div>`}
+async function readAlerts(){const u=S.user,k=u.role==="hq"?"readHq":"read";for(const a of S.alerts.filter(a=>!a[k]&&(u.role==="hq"||a.div===u.div))){const {id,...r}=a;await S.db.collection("alerts").doc(id).set({...r,[k]:true})}}
+function lateV(rows){const m=S.month,nos=rows.filter(x=>!x.sub),ms=rows.reduce((a,x)=>a+x.s.miss,0);let h="";if(late(m)&&nos.length)h+=`<div class="card" style="border-color:var(--no)"><b style="color:var(--no)">⚠ 제출 마감(${dlOf(m)}) 경과 — 미제출 ${nos.length}개 지역단</b><br>${nos.map(x=>`<span class="tag no">${E(x.r.name)}</span> `).join("")}</div>`;if(ms)h+=`<div class="card" style="border-color:var(--wa)"><b style="color:var(--wa)">실적 미입력 ${ms}건</b> (예정일 경과) — 지역단별 표의 '미입력' 열 참고</div>`;return h}
+function regWarn(l){const m=S.month,ms=stat(l).miss;let h=`<div class="mut" style="margin-bottom:8px">${m} 계획 제출 마감일: <b>${dlOf(m)}</b></div>`;if(late(m)&&!l.length)h+=`<div class="card" style="border-color:var(--no)"><b style="color:var(--no)">⚠ 제출 마감이 지났습니다. 계획을 등록해 주세요.</b></div>`;if(ms)h+=`<div class="card" style="border-color:var(--wa)"><b style="color:var(--wa)">실적 미입력 ${ms}건 — 예정일이 지난 세미나의 실적을 입력해 주세요.</b></div>`;return h}
+function deadlineV(){return`<div class="card"><h2>제출 마감일 설정</h2><p class="mut">${S.month} 계획 기준 (기본: 전월 말일)</p><div class="row"><input type="date" id="dl_v" style="width:auto" value="${dlOf(S.month)}"><button class="btn" onclick="setDl()">저장</button></div><h3 style="margin-top:16px">최저기준 인원 (${S.month}, 전체)</h3><div class="row"><input type="number" id="mn_v" style="width:120px" value="${minOf(S.month,-1)}"><button class="btn" onclick="setMin(false)">저장</button></div></div>`}
+async function setDl(){const v=V("dl_v");if(!v)return;await S.db.doc("settings/cfg").set({...S.cfg,dl:{...(S.cfg.dl||{}),[S.month]:v}})}
+async function runDaily(){const t=today(),n=new Date(),x=new Date(n.getFullYear(),n.getMonth()+1,1),months={};[t.slice(0,7),x.getFullYear()+"-"+pad(x.getMonth()+1)].forEach(m=>{months[m]=DIV.map((_,i)=>{const l=S.plans.filter(p=>p.month===m&&RM[p.rid]?.div===i),s=stat(l);return{div:i,sub:new Set(l.map(p=>p.rid)).size,n:s.n,done:s.done,up:s.up,cancel:s.cancel,miss:s.miss,rate:s.rate}})});await S.db.collection("daily").doc(t).set({months,time:pad(n.getHours())+":"+pad(n.getMinutes()),at:n.toISOString()})}
+function autoDaily(){}
+function dailyV(){const u=S.user,hq=u.role==="hq";return`<div class="card"><div class="row"><h2 style="margin:0">사업부별 일일 진행 현황</h2>${hq?`<button class="btn g s" onclick="runDaily()">지금 집계</button>`:""}</div><p class="mut">매일 오전 9시(KST)에 서버가 자동 집계·저장합니다.</p></div>`+(S.daily.slice(0,7).map(d=>`<div class="card"><h3>${E(d.id)} ${E(d.time)} 집계</h3>${Object.entries(d.months||{}).map(([m,a])=>`<b>${E(m)}</b><div class="tw"><table><tr><th>사업부</th><th>제출</th><th>계획</th><th>완료</th><th>예정</th><th>취소</th><th>미입력</th><th>운영률</th></tr>${a.filter(x=>hq||x.div===u.div).map(x=>`<tr><td>${DIV[x.div]}</td><td>${x.sub}/18</td><td>${x.n}</td><td>${x.done}</td><td>${x.up}</td><td>${x.cancel}</td><td>${x.miss}</td><td>${x.rate}%</td></tr>`).join("")}</table></div>`).join("")}</div>`).join("")||`<div class="card">아직 집계가 없습니다.</div>`)}
+const fmtT=s=>{if(!s)return"-";const d=new Date(s),h=d.getHours();return (d.getMonth()+1)+". "+d.getDate()+". "+(h<12?"오전 ":"오후 ")+pad(h%12||12)+":"+pad(d.getMinutes())};
+const minOf=(m,dv)=>{const c=S.cfg;return (c.mind&&c.mind[m+"|"+dv])??(c.min&&c.min[m])??15};
+const wd=d=>d?" ("+"일월화수목금토"[new Date(d+"T00:00").getDay()]+")":"";
+const blank=()=>({date:"",time:"14:00",topic:"",place:"",owner:"",exp:"",target:"",expert:"N",memo:"",state:"plan",adate:"",cust:"",fc:"",result:"",reason:""});
+const toItem=p=>({...blank(),id:p.id,date:p.date,time:p.time||"14:00",topic:p.topic,place:p.place,owner:p.owner||"",exp:p.exp||"",target:p.target||"",expert:p.expert||"N",memo:p.memo||"",state:p.actual?(p.actual.done?"done":"no"):"plan",adate:p.actual?.date||p.date,cust:p.actual?.cust??"",fc:p.actual?.fc??"",result:p.actual?.result||"",reason:p.actual?.reason||"",orig:p});
+function regV2(){const u=S.user,m=S.month,l=inM().filter(p=>p.rid===u.rid),sg=l.map(p=>p.id+(p.updatedAt||"")).join(),k=u.rid+m;
+ if(!S.draft||S.draft.k!==k||(!S.dirty&&S.draft.sig!==sg)){S.draft={k,sig:sg,items:l.filter(p=>p.status!=="cancel").sort((a,b)=>a.date.localeCompare(b.date)).map(toItem)};S.dirty=false}
+ const s=stat(l),mn=minOf(m,u.div),[y,mo]=m.split("-"),sub=l.length>0,ca=l.map(p=>p.createdAt||"").sort().pop(),nav=d=>{const x=new Date(+y,mo-1+d,1);return x.getFullYear()+"-"+pad(x.getMonth()+1)};
+ return`<div class="mut">${E(u.name)}</div><h1 class="ttl"><button class="nv" onclick="goM('${nav(-1)}')">‹</button>${y}년 ${+mo}월 세미나 계획<button class="nv" onclick="goM('${nav(1)}')">›</button> ${sub?'<span class="tag ok">제출 완료</span>':late(m)?'<span class="tag no">⚠ 마감 경과 미제출</span>':'<span class="tag wa">미제출</span>'}</h1>
+<p class="mut">제출 기한 ${dlOf(m)}${sub?" · 제출 "+fmtT(ca):""}</p>
+<div class="card row" style="padding:12px 18px"><span>최저기준</span><b style="color:var(--pri);font-size:22px">${mn}명</b><span class="mut">(사업부/본부 지정)</span></div>
+${s.miss?`<div class="card" style="border-color:var(--wa)"><b style="color:var(--wa)">실적 미입력 ${s.miss}건 — 예정일이 지난 세미나는 '운영 완료' 또는 '미운영'으로 바꿔 주세요.</b></div>`:""}
+<div class="grid3"><div class="kpi c"><small>계획</small><b>${s.n-s.cancel}회</b></div><div class="kpi c"><small>운영</small><b>${s.done}회</b></div><div class="kpi c"><small>고객 계</small><b>${s.cust}명</b></div></div>
+<div class="row" style="justify-content:space-between;margin:14px 0"><p class="mut" style="flex:1;min-width:240px;margin:0">계획은 월초에 <b>일정·주제·장소</b>를 입력해 제출하고, 세미나가 끝나면 <b>운영 완료</b>로 바꾸고 고객수를 입력하세요.</p><button class="btn g s" onclick="loadPrev()">지난달 계획 불러오기</button></div>
+${S.draft.items.map(cardV).join("")}
+<button class="btn g" style="width:100%" onclick="addItem()">＋ 세미나 추가</button>
+${l.some(p=>p.status==="cancel")?`<div class="card" style="margin-top:14px"><h3>취소된 세미나</h3>${l.filter(p=>p.status==="cancel").map(p=>`<p>• ${E(p.date)} ${E(p.topic)} <span class="tag no">취소</span></p>`).join("")}</div>`:""}
+${l.some(p=>p.history?.length)?`<div class="card" style="margin-top:14px"><h3>변경 이력</h3>${l.flatMap(p=>(p.history||[]).map(h=>({...h,t:p.topic}))).map(histV).join("")}</div>`:""}
+<div class="sbar"><span class="mut">${S.dirty?"저장하지 않은 변경이 있어요":"마지막 저장 "+fmtT(l.map(p=>p.updatedAt||p.createdAt||"").sort().pop())}</span><button class="btn" onclick="saveDraft()">수정 내용 저장</button></div>`}
+function cardV(it,i){const f=(k,t,lab)=>`<div><label>${lab}</label><input type="${t}" value="${E(it[k])}" oninput="up(${i},'${k}',this.value)"></div>`,exs=`<div><label>전문강사 지원</label><select onchange="up(${i},'expert',this.value)"><option value="N">불필요</option><option value="Y" ${it.expert==="Y"?"selected":""}>필요</option></select></div>`,mn=minOf(S.month,S.user.div),n=it.state==="done"?+it.cust:+it.exp,low=it.state!=="no"&&n>0&&n<mn;
+ return`<div class="card sess"><div class="row" style="justify-content:space-between"><b style="font-size:22px">${i+1}회</b><div class="seg">${[["plan","예정"],["done","운영 완료"],["no","미운영"]].map(x=>`<button class="${it.state===x[0]?"on":""}" onclick="setSt(${i},'${x[0]}')">${x[1]}</button>`).join("")}</div><button class="lnk" onclick="delItem(${i})">${it.id?"취소":"삭제"}</button></div>
+<div class="two">${f("date","date","일정"+wd(it.date))}${f("time","time","시간")}</div>${f("topic","text","주제")}<div class="two">${f("place","text","장소")}${f("owner","text","담당자")}</div>
+<div class="two">${f("exp","number","예상 고객수")}${it.state==="done"?f("cust","number","실제 고객수"):exs}</div>
+${it.state==="done"?`<div class="two">${f("adate","date","실제 운영일")}${f("fc","number","참석 FC")}</div>${f("result","text","주요 운영 결과")}`:""}${it.state==="no"?f("reason","text","미운영 사유"):""}
+${low?`<p style="color:var(--no);font-weight:700;margin:8px 0 0">⚠ 최저기준(${mn}명) 미달</p>`:""}
+<details><summary class="mut">추가 정보</summary>${f("target","text","참석 대상·특이사항")}${f("memo","text","기타 메모")}${it.state==="done"?exs:""}</details></div>`}
+const up=(i,k,v)=>{S.draft.items[i][k]=v;S.dirty=true};
+function setSt(i,s){S.draft.items[i].state=s;S.dirty=true;draw()}
+function addItem(){S.draft.items.push(blank());S.dirty=true;draw()}
+function delItem(i){const it=S.draft.items[i];if(it.id){if(!confirm("이 세미나를 취소 처리할까요? (변경 이력이 남습니다)"))return;(S.draft.dels=S.draft.dels||[]).push(it)}S.draft.items.splice(i,1);S.dirty=true;draw()}
+function goM(m){if(S.dirty&&!confirm("저장하지 않은 변경이 사라집니다. 이동할까요?"))return;S.dirty=false;S.draft=null;S.month=m;draw()}
+function loadPrev(){const [y,mo]=S.month.split("-").map(Number),pm=new Date(y,mo-2,1),pk=pm.getFullYear()+"-"+pad(pm.getMonth()+1),src=S.plans.filter(p=>p.rid===S.user.rid&&p.month===pk&&p.status!=="cancel"),last=new Date(y,mo,0).getDate();
+ if(!src.length){alert("불러올 이전 달 계획이 없어요.");return}src.forEach(p=>S.draft.items.push({...blank(),date:S.month+"-"+pad(Math.min(+p.date.slice(8),last)),time:p.time||"14:00",topic:p.topic,place:p.place,owner:p.owner||"",exp:p.exp||"",target:p.target||"",expert:p.expert||"N"}));S.dirty=true;draw()}
+async function saveDraft(reason){const D=S.draft,u=S.user,now=new Date().toISOString(),dels=D.dels||[];
+ for(const it of D.items)if(!it.date||!it.topic.trim()||!it.place.trim()){alert("일정·주제·장소는 필수입니다.");return}
+ const chg=D.items.filter(it=>it.id&&(it.date!==it.orig.date||it.time!==(it.orig.time||"14:00")||it.place!==it.orig.place));
+ if((chg.length||dels.length)&&!reason){modal(`<h2>변경 사유</h2><p class="mut">일정·장소 변경 또는 취소 ${chg.length+dels.length}건</p><input id="sv_r"><p id="ferr" style="color:var(--no)"></p><div class="row"><button class="btn" onclick="if(!V('sv_r').trim()){ferr.textContent='사유를 입력해 주세요.';return}document.getElementById('mod').style.display='none';saveDraft(V('sv_r'))">확인</button><button class="btn g" onclick="closeM()">닫기</button></div>`);return}
+ try{const col=S.db.collection("plans");
+ for(const it of D.items){const base={month:S.month,date:it.date,time:it.time,topic:it.topic.trim(),place:it.place.trim(),owner:it.owner,exp:+it.exp||0,target:it.target,expert:it.expert,memo:it.memo},
+  actual=it.state==="done"?{done:true,date:it.adate||it.date,cust:+it.cust||0,fc:+it.fc||0,result:it.result,reason:""}:it.state==="no"?{done:false,date:"",cust:0,fc:0,result:"",reason:it.reason}:null;
+  if(!it.id){await col.doc().set({...base,rid:u.rid,status:"plan",actual,history:[],createdAt:now,updatedAt:now,updatedBy:u.name});continue}
+  const p=it.orig,{id:_,...rest}=p,c=chg.includes(it),same=JSON.stringify([base,actual])===JSON.stringify([{month:p.month,date:p.date,time:p.time||"14:00",topic:p.topic,place:p.place,owner:p.owner||"",exp:p.exp||0,target:p.target||"",expert:p.expert||"N",memo:p.memo||""},p.actual||null]);
+  if(same)continue;const h=[...(p.history||[])];if(c)h.push({at:now,by:u.name,type:"일정/장소 변경",from:`${p.date} ${p.time} ${p.place}`,to:`${it.date} ${it.time} ${it.place}`,reason});
+  await col.doc(p.id).set({...rest,...base,actual,history:h,updatedAt:now,updatedBy:u.name});if(c)await alertDiv(u.rid,`일정 변경 ${p.date} ${p.time} ${p.place} → ${it.date} ${it.time} ${it.place} (사유: ${reason})`)}
+ for(const it of dels){const p=it.orig,{id:_,...rest}=p;await col.doc(p.id).set({...rest,status:"cancel",updatedAt:now,updatedBy:u.name,history:[...(p.history||[]),{at:now,by:u.name,type:"취소",from:`${p.date} ${p.time}`,to:"취소",reason}]});await alertDiv(u.rid,`${p.date} "${p.topic}" 취소 (사유: ${reason})`)}
+ S.dirty=false;S.draft=null;draw()}catch(e){alert("저장 실패: "+e.message)}}
+const minCard=()=>`<div class="card row"><b>소속 지역단 최저기준</b><input type="number" id="mn_v" style="width:110px" value="${minOf(S.month,S.user.div)}">명<button class="btn s" onclick="setMin(true)">저장</button></div>`;
+async function setMin(d){const v=+V("mn_v");if(!(v>=0))return;const c={...S.cfg};if(d)c.mind={...(c.mind||{}),[S.month+"|"+S.user.div]:v};else c.min={...(c.min||{}),[S.month]:v};await S.db.doc("settings/cfg").set(c)}
+boot();
+</script></body></html>
